@@ -1,0 +1,143 @@
+/* ============================================
+   DESIGN TOKENS — Portfolio Design System
+   ============================================ */
+
+:root {
+  /* ── Colors: Backgrounds ── */
+  --bg-primary: #000000;
+  --bg-surface: #0a0a0a;
+  --bg-elevated: #111111;
+  --bg-card: #0d0d0d;
+  --bg-card-hover: #141414;
+
+  /* ── Colors: Text ── */
+  --text-primary: #ededed;
+  --text-secondary: rgba(255, 255, 255, 0.65);
+  --text-muted: rgba(255, 255, 255, 0.4);
+  --text-faint: rgba(255, 255, 255, 0.25);
+  --text-inverse: #000000;
+
+  /* ── Colors: Accents ── */
+  --accent-green: #16a34a;
+  --accent-green-glow: rgba(22, 163, 74, 0.5);
+  --accent-red: #ef4444;
+  --accent-red-glow: rgba(239, 68, 68, 0.3);
+  --accent-purple: #8b5cf6;
+  --accent-purple-glow: rgba(139, 92, 246, 0.3);
+  --accent-blue: #3b82f6;
+  --accent-blue-glow: rgba(59, 130, 246, 0.3);
+  --accent-pink: #ec4899;
+  --accent-pink-glow: rgba(236, 72, 153, 0.3);
+  --accent-orange: #f97316;
+  --accent-cyan: #06b6d4;
+
+  /* ── Colors: Glassmorphism ── */
+  --glass-bg: rgba(17, 17, 17, 0.85);
+  --glass-bg-light: rgba(10, 10, 10, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.11);
+  --glass-border-hover: rgba(255, 255, 255, 0.18);
+  --glass-ring: rgba(0, 0, 0, 0.5);
+
+  /* ── Colors: Borders ── */
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-card: rgba(255, 255, 255, 0.08);
+  --border-divider: rgba(255, 255, 255, 0.06);
+
+  /* ── Typography ── */
+  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-script: 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* ── Font Sizes ── */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.8125rem;    /* 13px */
+  --text-base: 0.9375rem;  /* 15px */
+  --text-md: 1rem;         /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+  --text-6xl: 3.75rem;     /* 60px */
+  --text-7xl: 4.5rem;      /* 72px */
+  --text-8xl: 6rem;        /* 96px */
+  --text-9xl: 8rem;        /* 128px */
+  --text-hero: clamp(4rem, 12vw, 10rem);
+
+  /* ── Font Weights ── */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+  --weight-black: 900;
+
+  /* ── Spacing ── */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+
+  /* ── Border Radius ── */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 26px rgba(0, 0, 0, 0.34);
+  --shadow-xl: 0 12px 34px rgba(0, 0, 0, 0.54);
+  --shadow-glass: inset 0 1px 0 rgba(255, 255, 255, 0.11),
+                  inset 0 -1px 0 rgba(0, 0, 0, 0.78),
+                  inset 0 0 0 1px rgba(255, 255, 255, 0.025),
+                  0 10px 26px rgba(0, 0, 0, 0.34);
+  --shadow-glass-hover: inset 0 1px 0 rgba(255, 255, 255, 0.14),
+                        inset 0 -1px 0 rgba(0, 0, 0, 0.78),
+                        0 12px 30px rgba(0, 0, 0, 0.4);
+  --shadow-glow-red: 0 0 30px var(--accent-red-glow), 0 0 60px var(--accent-red-glow);
+  --shadow-glow-purple: 0 0 30px var(--accent-purple-glow), 0 0 60px var(--accent-purple-glow);
+  --shadow-glow-blue: 0 0 30px var(--accent-blue-glow), 0 0 60px var(--accent-blue-glow);
+  --shadow-glow-pink: 0 0 30px var(--accent-pink-glow), 0 0 60px var(--accent-pink-glow);
+
+  /* ── Gradients ── */
+  --gradient-red: linear-gradient(135deg, var(--accent-red), var(--accent-pink));
+  --gradient-purple: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+  --gradient-blue: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+  --gradient-green: linear-gradient(135deg, var(--accent-green), #22d3ee);
+  --gradient-warm: linear-gradient(135deg, var(--accent-orange), var(--accent-red));
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Z-Index ── */
+  --z-base: 1;
+  --z-dropdown: 50;
+  --z-navbar: 100;
+  --z-modal: 200;
+  --z-devtools-guard: 999999;
+
+  /* ── Layout ── */
+  --max-width: 1200px;
+  --max-width-narrow: 800px;
+  --nav-height: 80px;
+  --nav-height-mobile: 56px;
+}

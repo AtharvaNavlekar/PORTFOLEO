@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "oxc", "security"],
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }],
+    "no-eval": "error",
+    "no-implied-eval": "error",
+    "no-script-url": "error",
+    "no-new-func": "error",
+    "react/no-danger": "warn"
+  }
+}

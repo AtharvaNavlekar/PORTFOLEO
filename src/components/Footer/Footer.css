@@ -1,0 +1,201 @@
+/* ============================================
+   FOOTER COMPONENT
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&display=swap');
+
+.footer {
+  position: relative;
+  margin-top: var(--space-16);
+  padding-bottom: var(--space-8);
+}
+
+.footer__card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.05));
+  border-radius: var(--radius-2xl, 24px);
+  padding: var(--space-12) var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr 1fr 1.5fr;
+  gap: var(--space-8);
+}
+
+.footer__brand-col {
+  padding-right: var(--space-8);
+}
+
+.footer__brand-logo {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: var(--space-6);
+}
+
+.footer__logo-text {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-style: italic;
+  font-size: 3rem;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+
+.footer__logo-text {
+  font-family: 'Caveat', 'Dancing Script', cursive, var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -0.02em;
+}
+
+.footer__bio {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.footer__col-title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.footer__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.footer__nav-list a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  transition: color var(--transition-fast);
+  font-weight: var(--weight-medium);
+}
+
+.footer__nav-list a:hover {
+  color: var(--text-primary);
+}
+
+.footer__nav-col--legal {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__dmca {
+  margin-top: var(--space-8);
+}
+
+.footer__dmca-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.dmca-logo {
+  background: #22c55e;
+  color: #000;
+  padding: 2px 6px;
+  margin-right: 6px;
+}
+
+.footer__dmca-badge::after {
+  content: '';
+  padding-right: 6px;
+}
+
+.footer__legal-text {
+  font-size: 10px;
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
+.footer__legal-text a {
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer__legal-text a:hover {
+  color: var(--text-primary);
+}
+
+/* ── Bottom Bar ── */
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-6) 0 0 0;
+  border-top: 1px solid var(--border-divider);
+}
+
+.footer__copyright {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}
+
+.footer__socials {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.footer__social-link {
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__social-link:hover {
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footer__brand-col {
+    grid-column: span 3;
+    padding-right: 0;
+    margin-bottom: var(--space-4);
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer__brand-col {
+    grid-column: span 2;
+  }
+  .footer__nav-col--legal {
+    grid-column: span 2;
+    margin-top: var(--space-4);
+  }
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+}

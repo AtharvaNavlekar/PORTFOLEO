@@ -1,0 +1,27 @@
+{
+  "srcDir": "./src",
+  "buildDir": "./dist",
+  "publicDir": "./public",
+  "reportDir": "./security-reports",
+  "entryHtml": "./index.html",
+  "fileExtensions": [".js", ".jsx", ".ts", ".tsx", ".html", ".css"],
+  "watchIntervalMs": 30000,
+  "maxFileSizeBytes": 1000000,
+  "allowlist": {
+    "patterns": [],
+    "dependencies": {
+      "react-router": {
+        "advisory": "GHSA-qwww-vcr4-c8h2",
+        "reason": "RSC Mode CSRF — only affects React Server Components mode. This portfolio is a client-side SPA with no RSC, so this vulnerability is NOT exploitable. No fix available in react-router v7 stable line yet.",
+        "reviewDate": "2026-07-27",
+        "reviewBy": "security-audit"
+      },
+      "react-router-dom": {
+        "advisory": "GHSA-qwww-vcr4-c8h2",
+        "reason": "Inherited from react-router — same RSC Mode CSRF advisory. Not exploitable in client-side SPA.",
+        "reviewDate": "2026-07-27",
+        "reviewBy": "security-audit"
+      }
+    }
+  }
+}

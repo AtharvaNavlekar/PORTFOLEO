@@ -1,0 +1,100 @@
+/* ============================================
+   DEVTOOLS GUARD OVERLAY
+   ============================================ */
+
+.devtools-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-devtools-guard);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.devtools-overlay__backdrop {
+  position: absolute;
+  inset: 0;
+  background: #000000;
+  opacity: 0.97;
+}
+
+.devtools-overlay__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 480px;
+  padding: var(--space-12);
+  animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.devtools-overlay__icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: var(--accent-red);
+  margin-bottom: var(--space-8);
+  animation: glowPulse 2s ease-in-out infinite;
+  --glow-color: rgba(239, 68, 68, 0.2);
+}
+
+.devtools-overlay__title {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-extrabold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+.devtools-overlay__message {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-2);
+}
+
+.devtools-overlay__highlight {
+  color: var(--accent-red);
+  font-weight: var(--weight-semibold);
+}
+
+.devtools-overlay__submessage {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-10);
+}
+
+.devtools-overlay__button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-8);
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: none;
+}
+
+.devtools-overlay__button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+.devtools-overlay__button:active {
+  transform: scale(0.98);
+}

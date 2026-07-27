@@ -1,0 +1,30 @@
+# Security Headers for Deployment
+# ================================
+# Compatible with: Netlify, Cloudflare Pages, and similar platforms
+# For Vercel: migrate these to vercel.json headers config
+# For Apache: migrate to .htaccess
+# For Nginx: migrate to server block config
+
+/*
+  # Prevent clickjacking — blocks the site from being embedded in iframes
+  X-Frame-Options: DENY
+
+  # Prevent MIME type sniffing — browser must respect declared Content-Type
+  X-Content-Type-Options: nosniff
+
+  # Enforce HTTPS for 1 year, include subdomains
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  # Control referrer information sent with requests
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Content Security Policy — restricts resource loading sources
+  # This CSP is configured for a React + Vite + Google Fonts stack
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'
+
+  # Restrict browser features the site can access
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
+
+  # Prevent cross-origin resource access
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin

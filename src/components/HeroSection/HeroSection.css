@@ -1,0 +1,201 @@
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* ── Ambient Glow ── */
+.hero__ambient-glow {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  background: radial-gradient(circle, var(--accent-purple-glow) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+/* ── Giant Title ── */
+.hero__title {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(5rem, 18vw, 14rem);
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  line-height: 0.85;
+  text-transform: uppercase;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.95) 40%,
+    rgba(255, 255, 255, 0.55) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  width: 100%;
+  max-width: none;
+}
+
+/* ── Subtitle ── */
+.hero__subtitle {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: var(--space-10);
+}
+
+/* ── Script Text ── */
+.hero__script {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  color: var(--text-primary);
+  margin-top: var(--space-3);
+  -webkit-text-fill-color: unset;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+}
+
+/* ── Bottom Badges ── */
+.hero__badges {
+  position: fixed;
+  bottom: var(--space-10);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--space-8);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  pointer-events: auto;
+}
+
+.hero__badge--left {
+  align-items: flex-start;
+}
+
+.hero__badge--right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.hero__badge-icon {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-1);
+}
+
+.hero__badge-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero__badge-title {
+  font-family: var(--font-display);
+  font-size: 10px;
+  font-weight: var(--weight-extrabold);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.hero__badge-sub {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Grid Background ── */
+.hero__grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black, transparent);
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black, transparent);
+  z-index: 0;
+}
+
+/* ── Page-specific hero variants ── */
+.hero--home {
+  min-height: 100vh;
+}
+
+.hero--page {
+  min-height: 60vh;
+  padding-bottom: var(--space-16);
+}
+
+.hero--page .hero__title {
+  font-size: clamp(3rem, 12vw, 9rem);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 85vh;
+    padding-top: calc(var(--nav-height-mobile) + var(--space-8));
+  }
+
+  .hero__title {
+    font-size: clamp(3.5rem, 20vw, 6rem);
+  }
+
+  .hero__script {
+    font-size: clamp(1.4rem, 6vw, 2.2rem);
+  }
+
+  .hero__badges {
+    position: relative;
+    bottom: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+    margin-top: var(--space-16);
+    padding: 0;
+  }
+
+  .hero__badge--left,
+  .hero__badge--right {
+    align-items: center;
+    text-align: center;
+  }
+}
