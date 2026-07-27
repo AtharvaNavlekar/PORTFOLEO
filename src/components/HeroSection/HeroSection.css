@@ -48,12 +48,10 @@
   letter-spacing: 0.04em;
   line-height: 0.85;
   text-transform: uppercase;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0.95) 40%,
-    rgba(255, 255, 255, 0.55) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.95) 40%,
+      rgba(255, 255, 255, 0.55) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -115,8 +113,11 @@
 }
 
 .hero__badge-icon {
-  font-size: var(--text-xl);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: var(--space-1);
+  color: currentColor;
 }
 
 .hero__badge-text {
